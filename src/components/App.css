@@ -1,0 +1,210 @@
+/* 
+fonts:
+font-family: 'Open Sans', sans-serif;
+font-family: 'Montserrat', sans-serif; 
+https://fonts.google.com/specimen/Open+Sans?selection.family=Montserrat:900|Open+Sans by steve matteson & Julieta Ulanovsky
+colors: 
+#340040, #f2055c #07f2f2, #05f26c, #eaf205 
+#00FF87 #05F1FF #FF015B #EBFF00 yellow #37003C violet
+https://color.adobe.com/Premier-League-color-theme-7565396/ by ishyad
+*/
+body {
+  margin: 0;
+  text-align: center;
+  background-color: #ff015b;
+  color: #ddd;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.avatar {
+  width: 120px;
+  border-radius: 50%;
+}
+
+.name-tag {
+  font-size: 2.5em;
+  font-family: "Montserrat", sans-serif;
+}
+
+.title-tag {
+  font-size: 1.2em;
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+}
+
+#about-me,
+#tech-stack,
+#portfolio,
+#contact {
+  max-width: 50vw;
+}
+
+#about-me h1,
+#tech-stack h1,
+#portfolio h1,
+#contact h1 {
+  padding-bottom: 10px;
+  border-bottom: 3px solid #ddd;
+  margin-bottom: 50px;
+  font-family: "Montserrat", sans-serif;
+}
+
+#about-me p {
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+}
+
+#tech-stack .stack {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#tech-stack .stack * {
+  font-size: 5em;
+  margin: 10px;
+}
+
+#portfolio #body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#portfolio #body .work {
+  margin: 1px;
+}
+
+#contact .contact {
+  font-size: 2em;
+  padding: 15px;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
+#contact .contact:hover {
+  background-color: #ddd;
+  color: #ff015b;
+  transform: scale(1.4);
+}
+
+nav {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+}
+
+nav .link {
+  display: block;
+  margin: 20px 10px;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px;
+  transition: 0.3s ease-out;
+  transform-origin: left;
+}
+
+nav .link:hover {
+  transform: scale(1.5) translateX(10px);
+  background-color: white;
+  color: #ff015b;
+}
+
+nav .link.active {
+  transform: scale(1.5) translateX(10px);
+  background-color: white;
+  color: #ff015b;
+}
+
+#app .particles {
+  position: absolute;
+  width: 99vw;
+  height: 99vh;
+  z-index: -1;
+}
+
+#modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+#modal .body {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 100px 1fr 100px;
+  grid-template-areas: "title title" "slideshow slideshow" "link usedTech";
+  position: relative;
+  width: 70vw;
+  height: 70vh;
+  background-color: white;
+  color: #111;
+  align-items: center;
+}
+
+#modal .close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #333;
+}
+
+#modal .title {
+  grid-area: title;
+}
+#modal #slideshow {
+  position: relative;
+  grid-area: slideshow;
+  max-height: 100%;
+}
+
+#modal #slideshow:hover .thumbnails {
+  display: block;
+}
+
+#modal #slideshow .image {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+#modal .thumbnails {
+  display: none;
+  position: absolute;
+  bottom: 30px;
+  padding: 20px 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+#modal .thumbnails img {
+  width: 200px;
+  margin: 0 5px;
+}
+
+#modal .link {
+  grid-area: link;
+}
+#modal .usedTech {
+  grid-area: usedTech;
+}
+
+#modal .icon {
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+a {
+  color: #ddd;
+  text-decoration: none;
+}
