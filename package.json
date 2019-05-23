@@ -9,6 +9,8 @@
     "@fortawesome/free-brands-svg-icons": "5.7.1",
     "@fortawesome/free-solid-svg-icons": "5.7.1",
     "@fortawesome/react-fontawesome": "0.1.4",
+    "@material/menu": "^2.2.0",
+    "@material/react-menu": "^0.12.1",
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-particles-js": "2.4.2",
@@ -21,5 +23,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

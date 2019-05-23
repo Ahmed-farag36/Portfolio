@@ -1,17 +1,23 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {} from "@fortawesome/free-solid-svg-icons";
-import "@fortawesome/free-brands-svg-icons";
+// import material icons if brands doesn't exist use svgs.
 
 const TechStack = props => (
   <div id="tech-stack">
     <h1 className="name-tag">MY TECH STACK</h1>
     <div className="stack">
-      <FontAwesomeIcon icon={["fab", "react"]} />
-      <FontAwesomeIcon icon={["fab", "node"]} />
-      <FontAwesomeIcon icon={["fab", "js"]} />
-      <FontAwesomeIcon icon={["fab", "css3"]} />
-      <FontAwesomeIcon icon={["fab", "html5"]} />
+      {/* use material icons */}
+      <h2>With a good grasp</h2>
+      <i>MongoDB</i>
+      <i>Expressjs</i>
+      <i>React</i>
+      <i>Nodejs</i>
+      <i>GraphQL</i>
+      <i>JavaScript</i>
+      <i>PWA</i>
+      <h2>Learning</h2>
+      <i>Rust</i>
+      <i>Web assembly</i>
+      <h2>In my plan</h2>
     </div>
   </div>
 );

@@ -1,28 +1,26 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {} from "@fortawesome/free-solid-svg-icons";
-// import "@fortawesome/free-brands-svg-icons";
+// import material icons if brands doesn't exist use svgs.
 
 const Contact = props => (
   <div id="contact">
     <h1>CONTACT ME</h1>
     <a href="mailto:born2killthem@gmail.com">
-      <FontAwesomeIcon className="contact" icon={["fab", "google"]} />
+      {/* icon google */}google
     </a>
-    <a href="">
-      <FontAwesomeIcon className="contact" icon={["fab", "linkedin"]} />
+    <a href="http://">
+      {/* icon linkedin */}linkedin
     </a>
     <a href="https://github.com/ahmedfarag36" target="blank">
-      <FontAwesomeIcon className="contact" icon={["fab", "github"]} />
+      {/* icon github */}github
     </a>
-    <a href="">
-      <FontAwesomeIcon className="contact" icon={["fab", "slack"]} />
+    <a href="http://">
+      {/* icon slack */}slack
     </a>
-    <a href="">
-      <FontAwesomeIcon className="contact" icon={["fab", "stack-overflow"]} />
+    <a href="http://">
+      {/* icon stackoverflow */}stackoverflow
     </a>
-    <a href="">
-      <FontAwesomeIcon className="contact" icon={["fab", "discord"]} />
+    <a href="http://">
+      {/* icon discord */}discord
     </a>
   </div>
 );
