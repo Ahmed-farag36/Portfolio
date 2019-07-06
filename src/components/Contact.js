@@ -1,26 +1,29 @@
 import React from "react";
-// import material icons if brands doesn't exist use svgs.
+// compare svg to web fonts icons
 
 const Contact = props => (
   <div id="contact">
     <h1>CONTACT ME</h1>
-    <a href="mailto:born2killthem@gmail.com">
-      {/* icon google */}google
+    <a href="mailto:faragdevloper@gmail.com" className="contact">
+      <img src="/img/gmail.svg" alt="" />
     </a>
-    <a href="http://">
-      {/* icon linkedin */}linkedin
+    <a href="https://github.com/ahmedfarag36" className="contact" target="blank">
+      <img src="/img/github.svg" alt="" />
     </a>
-    <a href="https://github.com/ahmedfarag36" target="blank">
-      {/* icon github */}github
+    <a href="https://" className="contact" target="blank">
+      <img src="/img/upwork.svg" alt="" />
     </a>
-    <a href="http://">
-      {/* icon slack */}slack
+    <a href="http://" className="contact" target="blank">
+      <img src="/img/stackoverflow.svg" alt="" />
     </a>
-    <a href="http://">
-      {/* icon stackoverflow */}stackoverflow
+    <a href="http://" className="contact" target="blank">
+      <img src="/img/linkedin.svg" alt="" />
     </a>
-    <a href="http://">
-      {/* icon discord */}discord
+    <a href="http://" className="contact" target="blank">
+      <img src="/img/slack.svg" alt="" />
+    </a>
+    <a href="http://" className="contact" target="blank">
+      <img src="/img/discord.svg" alt="" />
     </a>
   </div>
 );

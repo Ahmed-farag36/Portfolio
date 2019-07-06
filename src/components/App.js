@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Landing from "./Landing";
 import TechStack from "./TechStack";
-// import Portfolio from "./Portfolio";
+import Portfolio from "./Portfolio";
 import Contact from "./Contact";
+import Carousel from './Carousel';
 // import Navigation from "./Navigation";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
@@ -32,8 +33,9 @@ export default class App extends Component {
           <Route path="/" exact component={Landing} />
           {/* <Route path="/aboutme/" component={AboutMe} /> */}
           <Route path="/techstack/" component={TechStack} />
-          {/* {/* <Route path="/portfolio/" component={Portfolio} /> */}
+          <Route path="/portfolio/" component={Portfolio} />
           <Route path="/contact/" component={Contact} />
+          <Route path="/carousel/" component={Carousel} />
         </div>
       </Router>
     );

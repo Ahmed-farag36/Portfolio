@@ -11,9 +11,9 @@ class Portfolio extends React.Component {
           title: "PROJECT 1",
           link: "https://www.example.com/project1",
           images: [
-            "https://mondrian.mashable.com/uploads%252Fcard%252Fimage%252F866911%252Fc157ebea-56a7-468d-8cc9-1ae497d0375e.jpg%252F950x534__filters%253Aquality%252890%2529.jpg?signature=A1XEXGnfQ6faIGi2LDyTuXRzXBk=&source=https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com",
-            "https://cdn.macrumors.com/article-new/2018/10/applelogos2-800x289.jpg",
-            "https://mondrian.mashable.com/uploads%252Fcard%252Fimage%252F866911%252Fc157ebea-56a7-468d-8cc9-1ae497d0375e.jpg%252F950x534__filters%253Aquality%252890%2529.jpg?signature=A1XEXGnfQ6faIGi2LDyTuXRzXBk=&source=https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com",
+            "/img/wallpaper_1536845282419.jpg",
+            "/img/wallpaper_1536845282419.jpg",
+            "/img/wallpaper_1536845282419.jpg"
           ],
           usedTech: ["html5", "js", "react"]
         },
@@ -21,8 +21,9 @@ class Portfolio extends React.Component {
           title: "PROJECT 2",
           link: "https://www.example.com/project2",
           images: [
-            "https://cdn.macrumors.com/article-new/2018/10/applelogos2-800x289.jpg",
-            "https://mondrian.mashable.com/uploads%252Fcard%252Fimage%252F866911%252Fc157ebea-56a7-468d-8cc9-1ae497d0375e.jpg%252F950x534__filters%253Aquality%252890%2529.jpg?signature=A1XEXGnfQ6faIGi2LDyTuXRzXBk=&source=https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com",
+            "/img/wallpaper_1536934453559.jpg",
+            "/img/wallpaper_1536934453559.jpg",
+            "/img/wallpaper_1536934453559.jpg"
           ],
           usedTech: ["html5", "js", "node"]
         },
@@ -30,8 +31,9 @@ class Portfolio extends React.Component {
           title: "PROJECT 3",
           link: "https://www.example.com/project3",
           images: [
-            "https://mondrian.mashable.com/uploads%252Fcard%252Fimage%252F866911%252Fc157ebea-56a7-468d-8cc9-1ae497d0375e.jpg%252F950x534__filters%253Aquality%252890%2529.jpg?signature=A1XEXGnfQ6faIGi2LDyTuXRzXBk=&source=https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com",
-            "https://cdn.macrumors.com/article-new/2018/10/applelogos2-800x289.jpg",
+            "/img/wallpaper_1541066409195.jpg",
+            "/img/wallpaper_1541066409195.jpg",
+            "/img/wallpaper_1541066409195.jpg"
           ],
           usedTech: ["html5", "js"]
         },
@@ -39,11 +41,12 @@ class Portfolio extends React.Component {
           title: "PROJECT 4",
           link: "https://www.example.com/project4",
           images: [
-            "https://cdn.macrumors.com/article-new/2018/10/applelogos2-800x289.jpg",
-            "https://mondrian.mashable.com/uploads%252Fcard%252Fimage%252F866911%252Fc157ebea-56a7-468d-8cc9-1ae497d0375e.jpg%252F950x534__filters%253Aquality%252890%2529.jpg?signature=A1XEXGnfQ6faIGi2LDyTuXRzXBk=&source=https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com",
+            "/img/wallpaper_1536934453559.jpg",
+            "/img/wallpaper_1536934453559.jpg",
+            "/img/wallpaper_1536934453559.jpg"
           ],
           usedTech: ["html5", "js", "node"]
-        }
+        },
       ],
       modalData: {}
     };
@@ -65,25 +68,27 @@ class Portfolio extends React.Component {
     return (
       <div id="portfolio">
         <h1>PORTFOLIO</h1>
-          <button>Prev</button>
-        <div id="body">
-          {
-            this.state.data.map((work, i) => (
-              <div
-                className="work"
-                key={i}
-                onClick={() => this.handleOpenModal(i)}
-                style={
-                  {
-                    background: `url(${work.images[0]})`,
+        <div className="body">
+          <img className="control prev" src="/img/angle-left.svg" alt="" />
+          <div className="slides">
+            {
+              this.state.data.map((work, i) => (
+                <div
+                  className="work"
+                  key={i}
+                  onClick={() => this.handleOpenModal(i)}
+                  style={
+                    {
+                      backgroundImage: `url(${work.images[0]})`,
+                    }
                   }
-                }
-              >
-              </div>
-            ))
-          }
+                >
+                </div>
+              ))
+            }
+          </div>
+          <img className="control next" src="/img/angle-right.svg" alt="" />
         </div>
-          <button>Next</button>
         {
           this.state.modalView ? (
             <Modal
