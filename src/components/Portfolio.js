@@ -1,4 +1,5 @@
 import React from "react";
+import Carousel from './Carousel';
 import Modal from "./Modal";
 
 class Portfolio extends React.Component {
@@ -15,7 +16,7 @@ class Portfolio extends React.Component {
             "/img/wallpaper_1536845282419.jpg",
             "/img/wallpaper_1536845282419.jpg"
           ],
-          usedTech: ["html5", "js", "react"]
+          usedTech: ["html5.svg", "javascript.svg", "react.svg"]
         },
         {
           title: "PROJECT 2",
@@ -25,7 +26,7 @@ class Portfolio extends React.Component {
             "/img/wallpaper_1536934453559.jpg",
             "/img/wallpaper_1536934453559.jpg"
           ],
-          usedTech: ["html5", "js", "node"]
+          usedTech: ["html5.svg", "css31.svg", "javascript.svg", "node-dot-js.svg"]
         },
         {
           title: "PROJECT 3",
@@ -35,7 +36,7 @@ class Portfolio extends React.Component {
             "/img/wallpaper_1541066409195.jpg",
             "/img/wallpaper_1541066409195.jpg"
           ],
-          usedTech: ["html5", "js"]
+          usedTech: ["html5.svg", "javascript.svg"]
         },
         {
           title: "PROJECT 4",
@@ -45,7 +46,7 @@ class Portfolio extends React.Component {
             "/img/wallpaper_1536934453559.jpg",
             "/img/wallpaper_1536934453559.jpg"
           ],
-          usedTech: ["html5", "js", "node"]
+          usedTech: ["html5.svg", "javascript.svg", "node-dot-js.svg","mongodb.svg", "graphql.svg"]
         },
       ],
       modalData: {}
@@ -57,6 +58,7 @@ class Portfolio extends React.Component {
   }
 
   handleOpenModal = i => {
+    console.log(i)
     this.setState({ modalView: true, modalData: this.state.data[i] });
   };
 
@@ -68,7 +70,7 @@ class Portfolio extends React.Component {
     return (
       <div id="portfolio">
         <h1>PORTFOLIO</h1>
-        <div className="body">
+        {/* <div className="body">
           <img className="control prev" src="/img/angle-left.svg" alt="" />
           <div className="slides">
             {
@@ -88,7 +90,11 @@ class Portfolio extends React.Component {
             }
           </div>
           <img className="control next" src="/img/angle-right.svg" alt="" />
-        </div>
+        </div> */}
+        <Carousel
+          onImgClick={this.handleOpenModal}
+          data={this.state.data}
+        />
         {
           this.state.modalView ? (
             <Modal

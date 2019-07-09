@@ -1,7 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faComment} from "@fortawesome/free-solid-svg-icons";
-import "@fortawesome/free-brands-svg-icons";
 
 const Modal = props => {
   const { title, link, images, usedTech } = props.data;
@@ -34,12 +31,14 @@ const Modal = props => {
         </a>
         <div className="usedTech">
           {
-            usedTech.map((tech, i) => <FontAwesomeIcon className="icon" key={i} icon={["fab", tech]} />)
+            usedTech.map((tech, i) => (
+              <img key={i} src={`/img/${tech}`} alt="" />
+            ))
           }
         </div>
         <div className="meta">
-          <FontAwesomeIcon className="icon" icon={faComment} />
-          {/* <FontAwesomeIcon className="icon" icon={["fab", "like"]} /> */}
+          <img src="/img/heart-o.svg" alt="like icon" />
+          <img src="/img/comment-o.svg" alt="comment icon" />
         </div>
       </div>
     </div>
