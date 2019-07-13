@@ -12,29 +12,25 @@ const Modal = props => {
         <div id="slideshow">
           <img className="image" alt="Artwork" src={images[0]} />
           <div className="thumbnails">
-            {
-              images.map((image, i) => (
-                <img
-                  key={i}
-                  alt="Artwork"
-                  src={image}
-                  onClick={() => {
-                    document.querySelector(".image").src = image;
-                  }}
-                />
-              ))
-            }
+            {images.map((image, i) => (
+              <img
+                key={i}
+                alt="Artwork"
+                src={image}
+                onClick={() => {
+                  document.querySelector(".image").src = image;
+                }}
+              />
+            ))}
           </div>
         </div>
         <a className="link" href={link}>
           Project link: {link}
         </a>
         <div className="usedTech">
-          {
-            usedTech.map((tech, i) => (
-              <img key={i} src={`/img/${tech}`} alt="" />
-            ))
-          }
+          {usedTech.map((tech, i) => (
+            <img key={i} src={`/img/${tech}`} alt="" />
+          ))}
         </div>
         <div className="meta">
           <img src="/img/heart-o.svg" alt="like icon" />

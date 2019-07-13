@@ -1,6 +1,8 @@
 import React from "react";
-import Carousel from './Carousel';
-import Modal from "./Modal";
+import Carousel from "./Carousel";
+// import Modal from "./Modal";
+import TempModal from "./TempModal";
+import Comments from "./Comments";
 
 class Portfolio extends React.Component {
   constructor(props) {
@@ -14,7 +16,7 @@ class Portfolio extends React.Component {
           images: [
             "/img/wallpaper_1536845282419.jpg",
             "/img/wallpaper_1536845282419.jpg",
-            "/img/wallpaper_1536845282419.jpg"
+            "/img/wallpaper_1536934453559.jpg"
           ],
           usedTech: ["html5.svg", "javascript.svg", "react.svg"]
         },
@@ -24,9 +26,15 @@ class Portfolio extends React.Component {
           images: [
             "/img/wallpaper_1536934453559.jpg",
             "/img/wallpaper_1536934453559.jpg",
-            "/img/wallpaper_1536934453559.jpg"
+
+            "/img/wallpaper_1536845282419.jpg"
           ],
-          usedTech: ["html5.svg", "css31.svg", "javascript.svg", "node-dot-js.svg"]
+          usedTech: [
+            "html5.svg",
+            "css31.svg",
+            "javascript.svg",
+            "node-dot-js.svg"
+          ]
         },
         {
           title: "PROJECT 3",
@@ -46,19 +54,22 @@ class Portfolio extends React.Component {
             "/img/wallpaper_1536934453559.jpg",
             "/img/wallpaper_1536934453559.jpg"
           ],
-          usedTech: ["html5.svg", "javascript.svg", "node-dot-js.svg","mongodb.svg", "graphql.svg"]
-        },
+          usedTech: [
+            "html5.svg",
+            "javascript.svg",
+            "node-dot-js.svg",
+            "mongodb.svg",
+            "graphql.svg"
+          ]
+        }
       ],
       modalData: {}
     };
   }
 
-  componentDidMount() {
-
-  }
+  componentDidMount() {}
 
   handleOpenModal = i => {
-    console.log(i)
     this.setState({ modalView: true, modalData: this.state.data[i] });
   };
 
@@ -70,39 +81,13 @@ class Portfolio extends React.Component {
     return (
       <div id="portfolio">
         <h1>PORTFOLIO</h1>
-        {/* <div className="body">
-          <img className="control prev" src="/img/angle-left.svg" alt="" />
-          <div className="slides">
-            {
-              this.state.data.map((work, i) => (
-                <div
-                  className="work"
-                  key={i}
-                  onClick={() => this.handleOpenModal(i)}
-                  style={
-                    {
-                      backgroundImage: `url(${work.images[0]})`,
-                    }
-                  }
-                >
-                </div>
-              ))
-            }
-          </div>
-          <img className="control next" src="/img/angle-right.svg" alt="" />
-        </div> */}
-        <Carousel
-          onImgClick={this.handleOpenModal}
-          data={this.state.data}
-        />
-        {
-          this.state.modalView ? (
-            <Modal
-              data={this.state.modalData}
-              onCloseModal={this.handleCloseModal}
-            />
-          ) : null
-        }
+        <Carousel onImgClick={this.handleOpenModal} data={this.state.data} />
+        {this.state.modalView ? (
+          <TempModal
+            data={this.state.modalData}
+            onCloseModal={this.handleCloseModal}
+          />
+        ) : null}
       </div>
     );
   }
